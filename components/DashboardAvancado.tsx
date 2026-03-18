@@ -134,7 +134,7 @@ export function DashboardAvancado() {
   const [searchResults, setSearchResults] = useState<{message: any, highlights: string[]}[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
-  const [selectedMessage, setSelectedMessage] = useState(null);
+  const [selectedMessage, setSelectedMessage] = useState<any | null>(null);
   
   // Hook para buscar categorias do Discord
   const { categories, loading: categoriesLoading, error: categoriesError } = useDiscordCategories();
