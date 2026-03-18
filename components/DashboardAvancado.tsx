@@ -720,7 +720,7 @@ const formatMessageAsEmbed = (content: string) => {
                           <span className="text-gray-400 text-xs w-3">#{index + 1}</span>
                           <span className="text-green-300 text-xs truncate max-w-[80px]">{user.username}</span>
                         </div>
-                        <span className="text-gray-300 text-xs">{user.count}</span>
+                        <span className="text-gray-300 text-xs">{String(user.count)}</span>
                       </div>
                     ))}
                   </div>
