@@ -623,7 +623,7 @@ const formatMessageAsEmbed = (content: string) => {
               <div className="flex items-center space-x-3">
                 <h2 className="text-lg font-bold text-white">
                   {selectedChannel === 'all' ? 'Todos os Canais' : 
-                   discordStructure.find(cat => cat.channels?.some(ch => ch.id === selectedChannel))?.name || 'Canal Selecionado'}
+                   discordStructure.find(cat => cat.channels?.some((ch: any) => ch.id === selectedChannel))?.name || 'Canal Selecionado'}
                 </h2>
                 <span className="text-gray-400 text-xs">
                   {(searchTerm.trim() || channelSearchTerm.trim()) 
@@ -829,14 +829,14 @@ const formatMessageAsEmbed = (content: string) => {
                           />
                           {searchTerm && getMessageHighlights(message.id).length > 1 && (
                             <div className="mt-1 space-y-1">
-                              {getMessageHighlights(message.id).slice(1).map((highlight, index) => (
+                              {getMessageHighlights(message.id).slice(1).map((highlight: any, index: number) => (
                                 <div key={index} className="text-xs text-gray-300" dangerouslySetInnerHTML={{ __html: highlight }} />
                               ))}
                             </div>
                           )}
                           {message.embeds && message.embeds.length > 0 && (
                             <div className="mt-1 space-y-1">
-                              {message.embeds.slice(0, 1).map((embed, index) => (
+                              {message.embeds.slice(0, 1).map((embed: any, index: number) => (
                                 <div key={index} className="bg-white/5 rounded p-2 border-l-2 border-blue-500">
                                   {embed.title && (
                                     <div className="font-semibold text-white text-xs mb-1">{embed.title}</div>
